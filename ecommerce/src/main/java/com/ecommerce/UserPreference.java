@@ -27,7 +27,7 @@ public class UserPreference {
         // Update the User
         userMap.put(userName,updateUser);
 
-        System.out.println(updateUser + " updated successfully.");
+        System.out.println(updateUser + "updated successfully.");
     }
  
     public void updateUserLanguage(String userName, String userLanguage) {
@@ -38,7 +38,7 @@ public class UserPreference {
         // Update the User
         userMap.put(userName,updateUser);
 
-        System.out.println(updateUser + " updated successfully.");
+        System.out.println(updateUser + "updated successfully.");
     }
 
 
