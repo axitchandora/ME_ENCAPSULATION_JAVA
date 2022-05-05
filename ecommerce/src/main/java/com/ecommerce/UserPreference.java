@@ -31,14 +31,31 @@ public class UserPreference {
     }
  
     public void updateUserLanguage(String userName, String userLanguage) {
+
         // Get the user
         User user = userMap.get(userName);
-        // Create a new User Object with updated values
-        User updateUser = new User(user.getUserId(), user.getCountry(),userLanguage);
-        // Update the User
-        userMap.put(userName,updateUser);
 
-        System.out.println(updateUser + "updated successfully.");
+        if(
+            ( user.getCountry().equals("COUNTRY_INDIA") && 
+                userLanguage.equals("LANGUAGE_HINDI") || userLanguage.equals("LANGUAGE_ENGLISH" ) )
+            ||
+            ( user.getCountry().equals("COUNTRY_USA") && 
+                userLanguage.equals("LANGUAGE_SPANISH") || userLanguage.equals("LANGUAGE_ENGLISH" ) )
+            ){
+                 // Create a new User Object with updated values
+                User updateUser = new User(user.getUserId(), user.getCountry(),userLanguage);
+                // Update the User
+                userMap.put(userName,updateUser);
+        
+                System.out.println(updateUser + "updated successfully.");
+            }else{
+            try {
+                throw new Exception("Invalid country/language combination");
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 
 
